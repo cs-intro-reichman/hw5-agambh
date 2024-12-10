@@ -9,6 +9,27 @@ public class MyString {
         System.out.println(countChar(hello, 'z'));
         System.out.println(spacedString(hello));
         //// Put your other tests here.
+        System.out.println(subsetOf("sap","space") ) ;//returns true
+        System.out.println(subsetOf("spa","space")); //returns true
+        System.out.println(subsetOf("pass","space")); //returns false
+        System.out.println(subsetOf("c","space")) ; //returns true
+
+        System.out.println(spacedString("silent")); //returns "s i l e n t"
+
+
+       // System.out.println(randomStringOfLetters(6)) ;
+        //System.out.println(randomStringOfLetters(7)) ;
+        //System.out.println(randomStringOfLetters(1)) ;
+
+
+        System.out.println(remove("meet","committee") ) ; //returns "comit" 
+        System.out.println(remove("abc","abc") ) ;
+        System.out.println(remove("","hello") ) ;
+        System.out.println(remove("b","abc") ) ;
+
+        System.out.println(insertRandomly('g', "aam"));
+        System.out.println(insertRandomly('s', "cat"));
+        
     }
 
     /**
@@ -20,8 +41,13 @@ public class MyString {
      * @return the number of times c appears in str
      */
     public static int countChar(String str, char ch) {
-        //// Replace the following statement with your code
-        return 0;
+        int count = 0;
+        for( int i = 0 ; i < str.length() ; i++ ){
+            if(str.charAt(i) == ch)
+            count ++ ;
+            
+        }
+        return count;
     }
 
     /** Returns true if str1 is a subset string str2, false otherwise
@@ -36,8 +62,11 @@ public class MyString {
      * @return true is str1 is a subset of str2, false otherwise
      */
     public static boolean subsetOf(String str1, String str2) {
-         //// Replace the following statement with your code
-        return false;
+         for(int i = 0 ; i < str1.length() ; i++){
+            if( countChar(str1 , str1.charAt(i)) > countChar(str2 , str1.charAt(i)))
+            return false; 
+         }
+        return true;
     }
 
     /** Returns a string which is the same as the given string, with a space
@@ -49,8 +78,16 @@ public class MyString {
      * @return a string consisting of the characters of str, separated by spaces.
      */
     public static String spacedString(String str) {
-        //// Replace the following statement with your code
-        return null;
+        String newstr = "";
+        if( str.length() == 1 || str == "")
+          return str;
+        for ( int i = 0 ; i < str.length() ; i++){
+            if( i == str.length() - 1 )
+               newstr += str.charAt(i);
+            else
+               newstr += str.charAt(i) + " " ;
+        }
+        return newstr;
     }
   
     /**
@@ -64,8 +101,15 @@ public class MyString {
      * @return a randomly generated string, consisting of 'n' lowercase letters
      */
     public static String randomStringOfLetters(int n) {
-        //// Replace the following statement with your code
-        return null;
+        String abc = "abcdefghijklmnopqrstuvwxyz";
+        String newS = "";
+        int index;
+        for(int i = 0 ; i < n ; i++){
+            index = (int)(Math.random() * 26);
+            newS += abc.charAt(index) ;
+        }
+        
+        return newS;
     }
 
     /**
@@ -77,9 +121,24 @@ public class MyString {
      * @param str2 - a string
      * @return a string consisting of str1 minus all the characters of str2
      */
-    public static String remove(String str1, String str2) {
-       //// Replace the following statement with your code
-        return null;
+    public static String remove(String str2, String str1) {
+        char c;
+        String newS = str2 ;
+        for(int i = 0 ; i < str1.length() ; i++){
+            str2 = newS ;
+            newS = "" ;
+            c = str1.charAt(i) ; 
+            for(int j = 0 ; j < str2.length() ; j++ ){
+                if(str2.charAt(j) != c){
+                   newS += str2.charAt(j);
+                } else {
+                   newS+= str2.substring(j+1);
+                   break ;
+                }   
+            }
+        }  
+        
+        return newS;
     }
 
     /**
