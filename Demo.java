@@ -56,7 +56,7 @@ public class Demo {
 
 		// Plays the game
 		while(true) {
-			System.out.println("Enter the number of random words you want to see, or e to end the game:");
+			System.out.println("Enter the number of 6random words you want to see, or e to end the game:");
 			// Gets the user's input, which is all the characters entered by 
 			// the user until the user enters the ENTER character.
 			String input = in.readString();
