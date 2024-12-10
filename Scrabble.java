@@ -123,8 +123,8 @@ public class Scrabble {
 			} else {
 				hand = MyString.remove(input , hand);
 				score += wordScore(input) ;
-				//System.out.println(input + " earned " + wordScore(input) + " points. Score: " + score + " points\n");
-				System.out.println("Invalid word. Try again.");
+				System.out.println(input + " earned " + wordScore(input) + " points. Score: " + score + " points\n");
+				//System.out.println("Invalid word. Try again.");
 			}
 			
 			//// Replace the following break statement with code
@@ -197,8 +197,8 @@ public class Scrabble {
 	}
 	public static void testPlayHands() {
 		init();
-		playHand("ocostrza");
-		playHand("arbffip");
+		//playHand("ocostrza");
+		//playHand("arbffip");
 		playHand("aretiin");
 	}
 }
