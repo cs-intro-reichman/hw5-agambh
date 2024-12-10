@@ -84,7 +84,7 @@ public class Scrabble {
 		//int index_e ;
 		//int index_a ;
 		String newS = "";
-		for(int i = 0 ; i< HAND_SIZE ; i++){
+		for(int i = 0 ; i< HAND_SIZE - 2 ; i++){
 			r = (int) (Math.random() * abc.length()) ;
 			newS += abc.charAt(r) ;
 		}
@@ -123,7 +123,8 @@ public class Scrabble {
 			} else {
 				hand = MyString.remove(input , hand);
 				score += wordScore(input) ;
-				System.out.println(input + " earned " + wordScore(input) + " points. Score: " + score + " points\n");
+				//System.out.println(input + " earned " + wordScore(input) + " points. Score: " + score + " points\n");
+				System.out.println("Invalid word. Try again.");
 			}
 			
 			//// Replace the following break statement with code
@@ -156,7 +157,7 @@ public class Scrabble {
 			} else if(input.equals("e")){
 				break;
 			} else {
-				System.out.println("Error");
+				System.out.println("Invalid word. Try again.");
 			}
 			//// Replace the following break statement with code
 			//// that completes the game playing loop

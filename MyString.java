@@ -26,6 +26,7 @@ public class MyString {
         System.out.println(remove("abc","abc") ) ;
         System.out.println(remove("","hello") ) ;
         System.out.println(remove("b","abc") ) ;
+
         System.out.println(insertRandomly('g', "aam"));
         System.out.println(insertRandomly('s', "cat"));
         
@@ -107,6 +108,7 @@ public class MyString {
             index = (int)(Math.random() * 26);
             newS += abc.charAt(index) ;
         }
+        
         return newS;
     }
 
@@ -119,7 +121,7 @@ public class MyString {
      * @param str2 - a string
      * @return a string consisting of str1 minus all the characters of str2
      */
-    public static String remove(String str1, String str2) {
+    public static String remove(String str2, String str1) {
         char c;
         String newS = str2 ;
         for(int i = 0 ; i < str1.length() ; i++){
@@ -135,6 +137,7 @@ public class MyString {
                 }   
             }
         }  
+        
         return newS;
     }
 
