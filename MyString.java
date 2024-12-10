@@ -3,7 +3,7 @@
  */
 public class MyString {
     public static void main(String args[]) {
-        String hello = "hello";
+       /**  String hello = "hello";
         System.out.println(countChar(hello, 'h'));
         System.out.println(countChar(hello, 'l'));
         System.out.println(countChar(hello, 'z'));
@@ -15,17 +15,17 @@ public class MyString {
         System.out.println(subsetOf("c","space")) ; //returns true
 
         System.out.println(spacedString("silent")); //returns "s i l e n t"
+**/
 
-
-        System.out.println(randomStringOfLetters(6)) ;
-        System.out.println(randomStringOfLetters(7)) ;
-        System.out.println(randomStringOfLetters(1)) ;
+       // System.out.println(randomStringOfLetters(6)) ;
+        //System.out.println(randomStringOfLetters(7)) ;
+        //System.out.println(randomStringOfLetters(1)) ;
 
 
         System.out.println(remove("meet","committee") ) ; //returns "comit" 
-        System.out.println(remove("aam","agam") ) ; //g
-
-
+        System.out.println(remove("abc","abc") ) ;
+        System.out.println(remove("","hello") ) ;
+        System.out.println(remove("b","abc") ) ;
         System.out.println(insertRandomly('g', "aam"));
         System.out.println(insertRandomly('s', "cat"));
         
@@ -62,7 +62,7 @@ public class MyString {
      */
     public static boolean subsetOf(String str1, String str2) {
          for(int i = 0 ; i < str1.length() ; i++){
-            if( countChar(str1 , str1.charAt(i)) != countChar(str2 , str1.charAt(i)))
+            if( countChar(str1 , str1.charAt(i)) > countChar(str2 , str1.charAt(i)))
             return false; 
          }
         return true;

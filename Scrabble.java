@@ -81,17 +81,20 @@ public class Scrabble {
 	public static String createHand() {
 		String abc = "abcdefghijklmnopqrstuvwxyz";
 		int r;
-		int index_e ;
-		int index_a ;
+		//int index_e ;
+		//int index_a ;
 		String newS = "";
-		for(int i = 0 ; i< HAND_SIZE -2 ; i++){
+		for(int i = 0 ; i< HAND_SIZE ; i++){
 			r = (int) (Math.random() * abc.length()) ;
-			newS += " " + abc.charAt(r) ;
+			newS += abc.charAt(r) ;
 		}
+		newS = MyString.insertRandomly('e' , newS);
+		newS = MyString.insertRandomly('a' , newS);
+       /* 
 		index_e = (int) ( Math.random() * ( HAND_SIZE - 1 ) )  ;
 		newS = newS.substring(0, index_e * 2 ) + " e" + newS.substring(index_e *2 );
 		index_a = (int) ( Math.random() * (HAND_SIZE ));
-		newS = newS.substring(0, index_a * 2 ) + " a" + newS.substring(index_a *2 );
+		newS = newS.substring(0, index_a * 2 ) + " a" + newS.substring(index_a *2 );*/
 		return newS;
 	}
 	
@@ -120,8 +123,9 @@ public class Scrabble {
 			} else {
 				hand = MyString.remove(input , hand);
 				score += wordScore(input) ;
-				System.out.println(input + " earned " + wordScore(input) + " points. Score: " + score + " points");
+				System.out.println(input + " earned " + wordScore(input) + " points. Score: " + score + " points\n");
 			}
+			
 			//// Replace the following break statement with code
 			//// that completes the hand playing loop
 			
