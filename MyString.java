@@ -3,7 +3,7 @@
  */
 public class MyString {
     public static void main(String args[]) {
-       /**  String hello = "hello";
+        String hello = "hello";
         System.out.println(countChar(hello, 'h'));
         System.out.println(countChar(hello, 'l'));
         System.out.println(countChar(hello, 'z'));
@@ -15,7 +15,7 @@ public class MyString {
         System.out.println(subsetOf("c","space")) ; //returns true
 
         System.out.println(spacedString("silent")); //returns "s i l e n t"
-**/
+
 
        // System.out.println(randomStringOfLetters(6)) ;
         //System.out.println(randomStringOfLetters(7)) ;

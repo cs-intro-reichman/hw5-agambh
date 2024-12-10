@@ -90,11 +90,6 @@ public class Scrabble {
 		}
 		newS = MyString.insertRandomly('e' , newS);
 		newS = MyString.insertRandomly('a' , newS);
-       /* 
-		index_e = (int) ( Math.random() * ( HAND_SIZE - 1 ) )  ;
-		newS = newS.substring(0, index_e * 2 ) + " e" + newS.substring(index_e *2 );
-		index_a = (int) ( Math.random() * (HAND_SIZE ));
-		newS = newS.substring(0, index_a * 2 ) + " a" + newS.substring(index_a *2 );*/
 		return newS;
 	}
 	
@@ -119,12 +114,12 @@ public class Scrabble {
 				break;
 			}
 			if(!isWordInDictionary(input)){
-				System.out.println("No such word in the dictionary. Try again.");
+				System.out.println("Invalid word. Try again.");
 			} else {
 				hand = MyString.remove( hand , input );
 				score += wordScore(input) ;
 				System.out.println(input + " earned " + wordScore(input) + " points. Score: " + score + " points\n");
-				//System.out.println("Invalid word. Try again.");
+				
 			}
 			
 			//// Replace the following break statement with code
@@ -159,8 +154,6 @@ public class Scrabble {
 			} else {
 				System.out.println("Invalid word. Try again.");
 			}
-			//// Replace the following break statement with code
-			//// that completes the game playing loop
 			
 		}
 	}
